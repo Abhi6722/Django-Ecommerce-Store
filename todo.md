@@ -15,3 +15,4 @@ coupons
 payment
 charts
 deploy
+ajax
