@@ -1,7 +1,7 @@
 add review
-company model
-show company data
-setup navbar, footer
+
+home
+
 add orders
 add cart
 add users
@@ -16,3 +16,4 @@ payment
 charts
 deploy
 ajax
+translation
