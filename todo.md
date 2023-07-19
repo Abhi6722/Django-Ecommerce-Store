@@ -1,7 +1,5 @@
 add review
 
-home
-
 add orders
 add cart
 add users
