@@ -1,4 +1,5 @@
 from typing import Any, Dict
+from django.db.models.query import QuerySet
 from django.shortcuts import render
 from django.views import generic
 from .models import Product , ProductImages , Review , Brand
@@ -98,6 +99,10 @@ class BrandList(generic.ListView):
     model = Brand
     paginate_by=50
 
+    def get_queryset(self):
+        object_list = Brand.objects.annotate(posts_count=Count('product_brand'))
+        return object_list
+
 
 
 
@@ -113,5 +118,5 @@ class BrandDetail(generic.ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["brand"] = Brand.objects.get(slug=self.kwargs['slug'])
+        context["brand"] = Brand.objects.filter(slug=self.kwargs['slug']).annotate(posts_count=Count('product_brand'))[0]
         return context
