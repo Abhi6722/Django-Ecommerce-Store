@@ -30,7 +30,7 @@ class Phones(models.Model):
 
 
 ADDRESS_CHOICES = (
-    ('Home' , 'Perimary' ),
+    ('Home' , 'Home' ),
     ('Office' , 'Office'),
     ('Bussines' , 'Bussines'),
     ('Academy' , 'Academy'),
